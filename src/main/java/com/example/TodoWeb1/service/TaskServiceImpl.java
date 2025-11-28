@@ -38,6 +38,7 @@ public class TaskServiceImpl implements TaskService  {
         newTask.setDescription(taskRequest.getDescription());
         newTask.setStatus(TaskStatus.TODO);
         newTask.setCreatedAt(LocalDateTime.now());
+        newTask.setUpdatedAt(LocalDateTime.now());
         Task savedTask = taskRepository.save(newTask);
         TaskResponse taskResponse = taskToResponse(savedTask);
         return taskResponse;
